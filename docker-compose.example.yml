@@ -1,0 +1,50 @@
+# SEOnaut + seonaut-mcp. Copy this file and .env.example next to each other, fill in .env, then:
+#   docker compose up -d
+# For an existing SEOnaut install, add only the `seonaut-mcp` service (and the read-only database user,
+# see README) to your compose file.
+services:
+  db:
+    image: mysql:8.4
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: seonaut
+      MYSQL_USER: seonaut
+      MYSQL_PASSWORD: ${SEONAUT_DB_PASSWORD}
+      SEONAUT_MCP_DB_PASSWORD: ${SEONAUT_MCP_DB_PASSWORD}
+    volumes:
+      - mysql-data:/var/lib/mysql
+      # Creates the read-only user `seonaut_mcp` the first time the database starts.
+      - ./mysql-init:/docker-entrypoint-initdb.d:ro
+
+  app:
+    image: ghcr.io/stjudewashere/seonaut:latest
+    restart: unless-stopped
+    command: sh -c "/bin/wait && /app/seonaut"
+    environment:
+      WAIT_HOSTS: db:3306
+      WAIT_TIMEOUT: 300
+      SEONAUT_DATABASE_PASSWORD: ${SEONAUT_DB_PASSWORD}
+    depends_on:
+      - db
+    ports:
+      - "9000:9000"
+
+  seonaut-mcp:
+    image: ghcr.io/abdullah-abuzaid/seonaut-mcp:latest
+    restart: unless-stopped
+    environment:
+      SEONAUT_MCP_DB_HOST: db
+      SEONAUT_MCP_DB_USER: seonaut_mcp
+      SEONAUT_MCP_DB_PASSWORD: ${SEONAUT_MCP_DB_PASSWORD}
+      SEONAUT_MCP_DB_NAME: seonaut
+      SEONAUT_MCP_SECRET: ${SEONAUT_MCP_SECRET}
+      # Public address of SEOnaut, so tools can link to its pages (optional).
+      SEONAUT_MCP_SEONAUT_URL: ${SEONAUT_PUBLIC_URL:-}
+    depends_on:
+      - db
+    ports:
+      - "9100:9100"
+
+volumes:
+  mysql-data:

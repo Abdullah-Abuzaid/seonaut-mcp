@@ -1,0 +1,318 @@
+{
+  "BLOCKED_IN_SITEMAP": {
+    "title": "Blocked pages included in the sitemap",
+    "description": "Pages blocked by the robots.txt file should not be included in the sitemap, as this sends a mixed signal to the search engines. They can also slow down the crawling process and lead to incorrect indexing."
+  },
+  "DEAD_END": {
+    "title": "Dead-end pages",
+    "description": "A dead-end page is a webpage that doesn't have any links pointing to other pages. This means that users and search engines have no way to navigate beyond the current page, making it difficult to explore the site and affecting both user experience and site crawlability."
+  },
+  "ERROR_30x": {
+    "title": "URLs returning status code 30x",
+    "description": "URLs causing redirects are sending users and search engines to a different page. Redirects can slow down page loading, confuse users and waste the search engine's crawl budget."
+  },
+  "ERROR_40x": {
+    "title": "URLs returning status code 40x",
+    "description": "This pages are missing and both your users and search engines are getting lost. It may signal to search engines that your site isn't well maintained. Over time, too many broken links can impact crawl efficiency and dilute your site's authority."
+  },
+  "ERROR_50x": {
+    "title": "URLs returning status code 50x",
+    "description": "This kind of errors usually occour due to a server bug or missconfiguration, the affected pages don't load properly and show an error page instead, scaring your users and annoying search engines."
+  },
+  "ERROR_BLOCKED": {
+    "title": "URLs blocked by robots.txt",
+    "description": "Pages blocked by robots.txt won't be crawled by search engines. Keep an eye on this list to make sure important pages are not being blocked."
+  },
+  "ERROR_CANONICALIZED_NON_CANONICAL": {
+    "title": "Canonicalized to non canonical",
+    "description": "Pages canonicalized to a non canonical URL. Canonicalized pages should point to a canonical page, replace the canonical link URL in this pages so they point to a canonical one."
+  },
+  "ERROR_CANONICALIZED_NON_INDEXABLE": {
+    "title": "Canonicalized to non-indexable",
+    "description": "Pages canonicalized to other non-indexable pages. This essentially tells search engines that the non-indexable page is the preferred version of the content, which can lead to confusion and make the content less likely to be discovered by users."
+  },
+  "ERROR_CANONICAL_ERROR": {
+    "title": "Canonicalized to error",
+    "description": "Pages that are canonicalized to URLs that are throwing errors with status codes in the 40x or 50x range. This can confuse search engines that will not be able to crawl your preferred version of the page."
+  },
+  "ERROR_CANONICAL_MISMATCH": {
+    "title": "Canonical mismatch",
+    "description": "Pages with different canonical URLs in the HTML code and HTTP headers. Setting different canonical URLs in the HTML code and HTTP headers creates inconsistency and can confuse search engines, which may result in reduced search engine rankings and visibility."
+  },
+  "ERROR_CANONICAL_REDIRECT": {
+    "title": "Canonicalized to redirect",
+    "description": "Pages that are canonicalized to redirected URLs instead of pointing to the actual preferred version of the page. This can confuse search engines trying to navigate and understand your website."
+  },
+  "ERROR_CONTENT_TYPE_OPTIONS": {
+    "title": "Missing content type options",
+    "description": "Pages missing X-Content-Type-Options header exposing the website to content type security risks, leading to potential SEO penalties and unsafe user experiences."
+  },
+  "ERROR_DOM_SIZE": {
+    "title": "HTML documents with an excessive DOM size",
+    "description": "Pages with a high DOM size can slow down page loading times and make it harder for search engines to crawl and index the content efficiently. Simplify your HTML structure by removing unnecessary elements and minimizing the use of nested tags."
+  },
+  "ERROR_DUPLICATED_CONTENT": {
+    "title": "Duplicated content",
+    "description": "Pages with the exact same content may confuse search engines and make them struggle to determine the most relevant page, leading to indexing issues, diluted ranking, and a waste of crawl budget."
+  },
+  "ERROR_DUPLICATED_DESCRIPTION": {
+    "title": "Pages with duplicated meta description",
+    "description": "It is recomended to have unique descriptions for each page so search engines can understand better your page."
+  },
+  "ERROR_DUPLICATED_ID": {
+    "title": "Pages containing elements with duplicated IDs",
+    "description": "Having elements with duplicate IDs confuses assistive technologies and JavaScript, leading to navigation issues and unpredictable behavior. This could impact user experience and SEO. Make sure IDs are unique."
+  },
+  "ERROR_DUPLICATED_TITLE": {
+    "title": "Pages with duplicated title",
+    "description": "The title tag is considered one of the most important elements for on-page SEO. If multiple pages have the same title, they will compete for a given search query confusing search engines."
+  },
+  "ERROR_EMPTY_DESCRIPTION": {
+    "title": "Pages with missing meta description",
+    "description": "Page description is not a ranking factor for search engines, but they often use it to show snippets on search results."
+  },
+  "ERROR_EMPTY_TITLE": {
+    "title": "Pages with missing title",
+    "description": "Page titles help search engines understand what a page is about and are often shown in search results. Without a title, your page may rank lower, get overlooked by users, and appear unprofessional or incomplete."
+  },
+  "ERROR_EXTERNAL_LINK_BROKEN": {
+    "title": "Pages with broken external links",
+    "description": "Broken external links don't impact your site's search engine rankings, but they can frustrate users by leading them to non-existent pages. Fix this by removing or updating the link with the correct URL."
+  },
+  "ERROR_EXTERNAL_LINK_REDIRECT": {
+    "title": "Pages with external links to redirect URLs",
+    "description": "External links to redirected pages won't affect your site's search engine rankings, but it can affect user experience. To fix it, replace the links with their final destinations."
+  },
+  "ERROR_EXTERNAL_WITHOUT_NOFOLLOW": {
+    "title": "Pages with external follow links",
+    "description": "Follow links will pass SEO authority to external sites. You may want to keep an eye on it to avoid link spam in comments and user generated content."
+  },
+  "ERROR_HREFLANG_ERROR": {
+    "title": "Hreflang to error",
+    "description": "Pages that have hreflang tags pointing to URLs that are throwing errors with status codes in the 40x or 50x range. This makes it impossible for search engines to properly index different versions of your page, which may affect your ranking in search engines."
+  },
+  "ERROR_HREFLANG_MISMATCHING_LANG": {
+    "title": "Mismatching language",
+    "description": "Using different language codes in the HTML lang attribute and the hreflang self-referencing value can confuse search engines and negatively impact SEO by misinterpreting the language or region of the page."
+  },
+  "ERROR_HREFLANG_NO_INDEXABLE": {
+    "title": "Hreflang to a non indexable page",
+    "description": "Hreflangs should link to indexable pages, linking them to pages using the noindex attribute will confuse search engines."
+  },
+  "ERROR_HREFLANG_REDIRECT": {
+    "title": "Hreflang to redirect",
+    "description": "Pages that have hreflang links to pages that are redirected with status codes in the 30x range. This it can create confusion for search engines that may have difficulty understanding the relationship between the original page and the redirected page."
+  },
+  "ERROR_HREFLANG_RELATIVE_URL": {
+    "title": "Hreflang values with relative URLs",
+    "description": "Pages that are using relative URLs in the hreflang values. Alternate URLs in the hreflang tags must be absolute. Replace them to avoid crawlabality issues and improper language detection of the page."
+  },
+  "ERROR_HREFLANG_RETURN": {
+    "title": "Pages missing the hreflang",
+    "description": "When referencing a page with hreflang, that page must reference back with a hreflang tag too. Without this two-way reference, search engines may ignore the hreflang annotations, leading to incorrect language versions being shown in search results."
+  },
+  "ERROR_HREFLANG_SELF_REFERENCE": {
+    "title": "Missing hreflang self-reference",
+    "description": "Including a self-reference in hreflang tags is crucial to specify the language or region of the current page, preventing potential confusion for search engines."
+  },
+  "ERROR_HREFLANG_TO_NON_CANONICAL": {
+    "title": "Hreflang to non canonical page",
+    "description": "Hreflang tags tell search engines where to find content in specific languages, linking hreflang tags to non canonical pages confuses search engines."
+  },
+  "ERROR_HREFLANG_XDEFAULT": {
+    "title": "Missing default language tag",
+    "description": "Pages missing the \"x-default\" hreflang value. Indicating the default language or region of a page, ensures proper indexing for users who don't match any specific hreflang tag value."
+  },
+  "ERROR_HTTP_FORM": {
+    "title": "Forms on HTTP pages",
+    "description": "HTTP pages with forms. Having a form on an HTTP URL compromises security, reducing user trust and SEO rankings. Make sure your forms are on HTTPS pages."
+  },
+  "ERROR_HTTP_LINKS": {
+    "title": "HTTPS URLs with links to HTTP URLs",
+    "description": "Links from secure HTTPS pages to unsecured HTTP ones. Having a fully secure website rank better than those without HTTPS, it also makes your users happier."
+  },
+  "ERROR_IMAGES_NO_ALT": {
+    "title": "Pages containing images with no alt attribute",
+    "description": "The image alt attribute improves your site's accessibility, it also helps search engines understand better your images."
+  },
+  "ERROR_IMG_SIZE_ATTR": {
+    "title": "Pages containing images missing size attributes",
+    "description": "Not setting the size attributes for images can cause layout shifts as the page loads, which can negatively impact user experience as well as SEO. Make sure your images have the corresponding size attributes in place."
+  },
+  "ERROR_INCORRECT_MEDIA_TYPE": {
+    "title": "URLs with incorrect media type",
+    "description": "Having URLs with incorrect MIME types can hurt SEO by causing browsers to misinterpret or fail to render content, which can impact user experience and search engine indexing."
+  },
+  "ERROR_INSECURE_FORM": {
+    "title": "Insecure forms",
+    "description": "Pages that have forms with HTTP action URLs. A form with an HTTP action URL exposes data to interception, reduces trust, triggers browser warnings, and negatively impacts SEO rankings."
+  },
+  "ERROR_INTERNAL_NOFOLLOW": {
+    "title": "Internal nofollow links",
+    "description": "Internal links in general should not use the nofollow attribute unless they link to pages you don't want indexed by search engines. Review the internal links and make sure important pages are linked without the nofollow attribute."
+  },
+  "ERROR_LARGE_IMAGE": {
+    "title": "Large images",
+    "description": "Large images can slow down a web page's loading speed, negatively affecting the user experience and SEO rankings due to increased load times. Consider using large images only when essential and optimize them to a reasonable size."
+  },
+  "ERROR_LITTLE_CONTENT": {
+    "title": "Pages with little content",
+    "description": "Pages with little content are not really useful for users or search engines, consider adding more content to your pages."
+  },
+  "ERROR_LOCALHOST_LINKS": {
+    "title": "Webpages with links to localhost",
+    "description": "Links to localhost or 127.0.0.1 are inaccessible to users and search engines, causing errors and poor SEO. To fix this, replace these links with the correct public URLs pointing to your live website."
+  },
+  "ERROR_LONG_ALT_TEXT": {
+    "title": "Images with long Alt text",
+    "description": "Pages that have images with long text in the alt attribute. Having a long text in the alt attribute of an image can make it harder to understand the image's content and purpose. Try to keep the alt text short and to the point."
+  },
+  "ERROR_LONG_DESCRIPTION": {
+    "title": "Pages with long meta description",
+    "description": "Description tags are not a ranking factor for search engines, but having good quality descriptions will get more accurate information in the search results. Long descriptions will often get truncated, making them not so sexy for users."
+  },
+  "ERROR_LONG_TITLE": {
+    "title": "Pages with long title",
+    "description": "Long titles won't affect your on-page SEO, but they are usually cut off on search results and tend to get fewer clicks."
+  },
+  "ERROR_METAS_IN_BODY": {
+    "title": "Pages with meta tags in the document's body",
+    "description": "Pages that have meta tags in the document's body. The meta tags must be placed in the head section of the document, otherwise they may get ignored by browsers as well as search engines, causing indexability issues."
+  },
+  "ERROR_MISSING_CSP": {
+    "title": "Missing content security policy",
+    "description": "Pages missing the CSP (Content Security Policy) HTML meta tag or HTTP header increase vulnerability to security threats, potentially leading to malicious content or compromised user experiences, which search engines may penalize."
+  },
+  "ERROR_MISSING_HSTS": {
+    "title": "Missing HSTS header",
+    "description": "Pages without HSTS header. Missing HTTP Strict Transport Security header makes sites more vulnerable to security threats which may impact SEO in terms of user security and trustworthiness."
+  },
+  "ERROR_MISSING_VIEWPORT": {
+    "title": "Pages missing the viewport meta tag",
+    "description": "A webpage missing the viewport meta tag won't display properly on mobile devices, leading to a bad user experience and lower rankings in search engine results."
+  },
+  "ERROR_MULTIPLE_CANONICAL_TAGS": {
+    "title": "Multiple canonical tags",
+    "description": "Pages that contain more than one canonical tag in the header section. Having more than one canonical confuses search engines about the preferred version of the page, leading to potential indexing and ranking issues."
+  },
+  "ERROR_MULTIPLE_DESCRIPTIONS": {
+    "title": "Multiple description meta tags",
+    "description": "Pages with more than one description meta tag in the header section. Having multiple description meta tags in the HTML header can hurt SEO by confusing search engines, as it can make it more difficult to understand the page's content."
+  },
+  "ERROR_MULTIPLE_LANG_REFERENCE": {
+    "title": "Multiple languages reference",
+    "description": "Pages with multiple languages referenced in hreflang tags can confuse search engines, leading to incorrect language indexing, which can negatively impact SEO and user experience."
+  },
+  "ERROR_MULTIPLE_SLASHES": {
+    "title": "URLS with multiple slashes in the path",
+    "description": "URLS with multiple consecutive forward slashes in the path. This can create confusion for search engines and users, potentially leading to indexing issues and a less clean, professional appearance."
+  },
+  "ERROR_MULTIPLE_TITLES": {
+    "title": "Multiple title tags",
+    "description": "Pages with more than one title tag in the header section. Having multiple title tags in the HTML header can hurt SEO by confusing search engines, as it can make it more difficult to understand the page's content."
+  },
+  "ERROR_NOFOLLOW_INDEXABLE": {
+    "title": "Internal nofollow links to indexable pages",
+    "description": "Internal links using the nofollow attribute tell search engines to not crawl that link. For it to work properly the destination URL should use the noindex tag, otherwise search engines still can index the linked URL."
+  },
+  "ERROR_NOIMAGEINDEX": {
+    "title": "Pages with the noimageindex rule",
+    "description": "The noimageindex rule in the robots meta tag prevents images to be indexed by search engines. Reveiew these pages to ensure the images in this pages shouldn't be indexed."
+  },
+  "ERROR_NOSNIPPET": {
+    "title": "Pages with the nosnippet directive",
+    "description": "The nosnippet or max-snippet:0 directives tell search engines not to display a text snippet or video preview in the search results. Review these pages to make sure this is the wanted behavior."
+  },
+  "ERROR_NOT_VALID_HEADINGS": {
+    "title": "Pages without valid headings order",
+    "description": "The heading tags in this pages don't follow the correct order. Headings should start with an H1 and follow a clear hierarchy (H2, H3, etc.). Proper structure helps search engines understand your content and improves accessibility for screen readers."
+  },
+  "ERROR_NO_H1": {
+    "title": "Pages missing the H1 heading",
+    "description": "The H1 tag describes the main topic of the page, without it both your users and search engine will find it harder to figure what the page is talking about."
+  },
+  "ERROR_NO_INDEXABLE": {
+    "title": "Non indexable pages",
+    "description": "Pages using the noindex attribute won't be indexed by search engines, this is usually added to non important pages that we don't wan't to appear in search results. It may be worth reviewing them to make sure important pages are not using this attribute."
+  },
+  "ERROR_NO_LANG": {
+    "title": "Pages missing the language attribute",
+    "description": "The language attribute is particularly usefull for screen readers and it's recommended to use it. Some search engines use it to show the appropriate page to the users depending on their language, but it does not affect your search engine ranking."
+  },
+  "ERROR_ORPHAN": {
+    "title": "Orphan pages",
+    "description": "Pages that are not linked anywhere in your site, this means no visitors can access to it and may lead to crawl wastage."
+  },
+  "ERROR_PAGE_DEPTH": {
+    "title": "High depth",
+    "description": "Pages with high depth can negatively impact SEO and user experience because they are challenging for both search engines and users to access, potentially leading to decreased visibility in search results and a less intuitive browsing experience."
+  },
+  "ERROR_PAGINATION_LINKS": {
+    "title": "Pagination URL not linked",
+    "description": "Having link rel=\"next\" and link rel=\"prev\" tags without corresponding links in the body confuses search engines, leading to poor indexing and a frustrating navigation experience."
+  },
+  "ERROR_PICTURE_MISSONG_IMG": {
+    "title": "Pages with pictures missing the img element",
+    "description": "Pages that are using a picture HTML element which is missing the img element. This can cause images to not be properly displayed in the browser and cause search engine image indexation issues."
+  },
+  "ERROR_REDIRECT_CHAIN": {
+    "title": "URLs causing a redirect chain",
+    "description": "Redirect chains are URLs that redirect to other URLs that also redirect somewhere else, creating a chain of redirects. Redirect chains frustrate users, and make it harder for search engines to crawl and index your content efficiently."
+  },
+  "ERROR_REDIRECT_LOOP": {
+    "title": "URLs causing a redirect loop",
+    "description": "Redirect loops are a couple of URLs that redirect to each other creating a never ending loop of redirects. Redirect loops prevents users and search engines from ever reaching the destination. It leads to poor user experience, broken navigation, and blocks search engines from properly crawling and indexing your site."
+  },
+  "ERROR_RELATIVE_CANONICAL_URL": {
+    "title": "Canonical with relative URL",
+    "description": "Pages that are using relative URLs in the canonical tag. Even though relative paths are supported by some search engines, they can cause problems in the long run such as improper page indexing and ranking. Consider using absolute URLs for a better practice."
+  },
+  "ERROR_SHORT_DESCRIPTION": {
+    "title": "Pages with short meta description",
+    "description": "Page description is not a ranking factor for search engines, but they often use it to show snippets on search results."
+  },
+  "ERROR_SHORT_TITLE": {
+    "title": "Pages with short title",
+    "description": "These pages have titles that are too short. Search engines will be happier if you provide longer titles."
+  },
+  "ERROR_SLOW_TTFB": {
+    "title": "Slow Time to First Byte",
+    "description": "A slow time to first byte can negatively impact the user experience and hurt SEO by causing longer page load times, as some search engines take page speed into consideration as a ranking factor."
+  },
+  "ERROR_SPACE_URL": {
+    "title": "URLs that contain a space",
+    "description": "Having a space character in the URL can cause indexing issues and broken links, negatively affecting SEO and user experience. Hyphens should be used as a word separator instead of spaces."
+  },
+  "ERROR_TIMEOUT": {
+    "title": "Timeout",
+    "description": "Pages that timed out when our crawler attempted to access them. When this happens, search engine crawlers may fail to access and index the content, suggesting potential server issues or temporary problems hindering visibility in search results."
+  },
+  "ERROR_TOO_MANY_LINKS": {
+    "title": "Pages with too many Links",
+    "description": "The SEO link juice is divided between all the links in the page, the more links in a page the less amount of juice is passed to them. Make sure all links are relevant, remove the ones that aren't or use the nofollow attribute."
+  },
+  "ERROR_UNDERSCORE_URL": {
+    "title": "URLs with underscore characters",
+    "description": "It is usually not recommended to use underscore characters in URLs, as some search engines will ignore them and treat that part as a single word. Use a dash instead as a word separator character."
+  },
+  "HTTP_SCHEME": {
+    "title": "Pages using the HTTP scheme",
+    "description": "Pages using HTTP instead of HTTPS. Using HTTPS is important as it can provide a more secure and trustworthy website, which can lead to improved user engagement and search engine rankings."
+  },
+  "INCOMING_FOLLOW_NOFOLLOW": {
+    "title": "Pages with incoming follow and nofollow links",
+    "description": "Having pages with internal incoming follow and nofollow links can dilute the authority and relevance signals, confusing search engines and making it less likely to rank high in search engine results."
+  },
+  "INVALID_LANG": {
+    "title": "Pages with invalid lang attribute",
+    "description": "Pages with an invalid lang attribute can cause problems for both search engines and users. Search engines may have trouble identifying the language of the content, while users may struggle with understanding it or using assistive technologies."
+  },
+  "NON_CANONICAL_IN_SITEMAP": {
+    "title": "Non-canonical pages included in the sitemap",
+    "description": "Non-canonical pages should not be included in a sitemap as they can mislead search engines, waste time and resources, and lead to incorrect indexing."
+  },
+  "NO_INDEX_IN_SITEMAP": {
+    "title": "Non-indexable pages included in the sitemap",
+    "description": "Non-indexable pages should not be included in a sitemap, as this sends a mixed signal to the search engines. They can also slow down the crawling process and lead to incorrect indexing."
+  }
+}

@@ -1,0 +1,56 @@
+# Test stack: SEOnaut + MySQL + a small website with known SEO problems + this MCP server.
+# Used by CI and for local development. Run e2e/seed.py after `docker compose up -d`.
+name: seonaut-mcp-e2e
+
+services:
+  db:
+    image: mysql:8.4
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: seonaut
+      MYSQL_USER: seonaut
+      MYSQL_PASSWORD: seonaut
+    volumes:
+      - ./mysql-init:/docker-entrypoint-initdb.d:ro
+    ports:
+      - "127.0.0.1:${E2E_DB_PORT:-33307}:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-proot"]
+      interval: 5s
+      timeout: 5s
+      retries: 40
+
+  app:
+    image: ${SEONAUT_IMAGE:-ghcr.io/stjudewashere/seonaut@sha256:d18721b6c07f333694ebe241d06442827ad56e343d34103051a3e5028f1697d9}
+    command: sh -c "/bin/wait && /app/seonaut"
+    environment:
+      WAIT_HOSTS: db:3306
+      WAIT_TIMEOUT: 300
+      WAIT_SLEEP_INTERVAL: 2
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:${E2E_SEONAUT_PORT:-9001}:9000"
+
+  site:
+    image: nginx:1.27-alpine
+    volumes:
+      - ./.site:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+
+  seonaut-mcp:
+    build: ..
+    environment:
+      SEONAUT_MCP_DB_HOST: db
+      SEONAUT_MCP_DB_USER: seonaut_ro
+      SEONAUT_MCP_DB_PASSWORD: seonaut_ro
+      SEONAUT_MCP_DB_NAME: seonaut
+      SEONAUT_MCP_SECRET: e2e-only-secret-not-for-production-0123456789
+      SEONAUT_MCP_SEONAUT_URL: http://localhost:9001
+      SEONAUT_MCP_USER_CACHE_SECONDS: "0"  # so the password-change test sees the change at once
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:${E2E_MCP_PORT:-9101}:9100"

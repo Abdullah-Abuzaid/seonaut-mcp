@@ -1,0 +1,57 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "seonaut-mcp"
+version = "0.1.0"
+description = "Unofficial MCP server that gives AI agents read-only access to SEOnaut crawl results, with SEOnaut's own users as accounts."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+authors = [{ name = "seonaut-mcp contributors" }]
+keywords = ["mcp", "model-context-protocol", "seo", "seonaut", "ai-agents"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Topic :: Internet :: WWW/HTTP :: Site Management",
+]
+dependencies = [
+  "mcp>=2.3,<3",
+  "pymysql>=1.1,<2",
+  "bcrypt>=4.1",
+  "pyjwt>=2.8,<3",
+  "uvicorn>=0.30",
+  "starlette>=0.40",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "httpx>=0.27", "ruff>=0.6"]
+
+[project.scripts]
+seonaut-mcp = "seonaut_mcp.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Abdullah-Abuzaid/seonaut-mcp"
+Issues = "https://github.com/Abdullah-Abuzaid/seonaut-mcp/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/seonaut_mcp"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["integration: needs a running SEOnaut database seeded by e2e/seed.py"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "S"]
+ignore = ["S101", "S608", "E501"]  # S608: SQL is built only from fixed fragments; values are bound
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S105", "S106"]
+"e2e/**" = ["S105", "S106", "S113"]

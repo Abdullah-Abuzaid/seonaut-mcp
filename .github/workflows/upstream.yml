@@ -1,0 +1,17 @@
+name: Latest SEOnaut
+
+# Weekly check that the tools still work with SEOnaut's newest image, so a database change in
+# SEOnaut is noticed before users upgrade. A failure here means: check SEOnaut's new migrations.
+on:
+  schedule:
+    - cron: "17 5 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  latest:
+    uses: ./.github/workflows/ci.yml
+    with:
+      seonaut_image: ghcr.io/stjudewashere/seonaut:latest
