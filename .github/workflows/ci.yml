@@ -8,7 +8,7 @@ on:
   workflow_call:
     inputs:
       seonaut_image:
-        description: SEOnaut image to test against (default: the pinned one in e2e/docker-compose.yml)
+        description: "SEOnaut image to test against. Empty = the pinned one in e2e/docker-compose.yml"
         type: string
         default: ""
 
